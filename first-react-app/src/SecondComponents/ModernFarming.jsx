@@ -3,41 +3,40 @@ import "./ModernFarming.css";
 import { useNavigate } from "react-router-dom";
 
 const crops = [
-  { emoji: "🌾", eng: "Wheat", hin: "गेहूं", ben: "গম" },
-  { emoji: "🌾", eng: "Barley", hin: "जौ", ben: "যব" },
-  { emoji: "🌱", eng: "Paddy", hin: "धान", ben: "ধান" },
-  { emoji: "🌿", eng: "Soya", hin: "सोया", ben: "সয়াবিন" },
-  { emoji: "🍅", eng: "Tomato", hin: "टमाटर", ben: "টমেটো" },
-  { emoji: "🌽", eng: "Maize", hin: "मक्का", ben: "ভুট্টা" },
-  { emoji: "🍬", eng: "Sugarcane", hin: "गन्ना", ben: "আখ" },
-  { emoji: "🥔", eng: "Potato", hin: "आलू", ben: "আলু" },
-  { emoji: "🧅", eng: "Onion", hin: "प्याज", ben: "পেঁয়াজ" },
-  { emoji: "🧵", eng: "Cotton", hin: "कपास", ben: "তুলা" },
-  { emoji: "🌻", eng: "Mustard", hin: "सरसों", ben: "সরিষা" },
-  { emoji: "🥜", eng: "Groundnut", hin: "मूंगफली", ben: "চিনা বাদাম" },
+  { name: "Wheat / गेहूं / গম", emoji: "🌾", route: "Wheat" },
+  { name: "Paddy / धान / ধান", emoji: "🌾", route: "Paddy" },
+  { name: "Soya / सोया / সয়া", emoji: "🌱", route: "Soya" },
+  { name: "Tomato / टमाटर / টমেটো", emoji: "🍅", route: "Tomato" },
+  { name: "Maize / मक्का / ভুট্টা", emoji: "🌽", route: "Maize" },
+  { name: "Sugarcane / गन्ना / আখ", emoji: "🥤", route: "Sugarcane" },
+  { name: "Potato / आलू / আলু", emoji: "🥔", route: "Potato" },
+  { name: "Onion / प्याज / পেঁয়াজ", emoji: "🧅", route: "Onion" },
+  { name: "Cotton / कपास / তুলা", emoji: "🧵", route: "Cotton" },
+  { name: "Mustard / सरसों / সরিষা", emoji: "🌼", route: "Mustard" },
+  { name: "Barley / जौ / যব", emoji: "🍺", route: "Barley" },
+  { name: "Millet / बाजरा / বাজরা", emoji: "🌾", route: "Millet" },
 ];
 
 function ModernFarming() {
   const navigate = useNavigate();
 
-  const handleCropClick = (cropEngName) => {
-    navigate(`/crop/${cropEngName.toLowerCase()}`);
+  const handleCropClick = (crop) => {
+    navigate(`/details/${crop.route}`);
   };
 
   return (
     <div className="modern-farming-container">
-      <h2>Choose a Crop to Learn More</h2>
       <div className="crops-grid">
         {crops.map((crop, index) => (
           <div
             key={index}
             className="crop-card"
-            onClick={() => handleCropClick(crop.eng)}
+            onClick={() => handleCropClick(crop)}
           >
-            <span className="emoji">{crop.emoji}</span>
-            <span className="crop-name">
-              {crop.eng} / {crop.hin} / {crop.ben}
-            </span>
+            <span role="img" aria-label={crop.name}>
+              {crop.emoji}
+            </span>{" "}
+            {crop.name}
           </div>
         ))}
       </div>

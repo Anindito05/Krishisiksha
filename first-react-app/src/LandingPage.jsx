@@ -16,7 +16,7 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
       </header>
 
       <section className="hero">
-        <h2 className="main-title">Empowering Rural India with Knowladge</h2>
+        <h2 className="main-title">Empowering Rural India with Knowledge</h2>
         <p className="subtitle">Learn about modern farming, digital literacy, and entrepreneurship - all in one platform, designed for rural communities for agricultural development.</p>
         <button className="button get-started" onClick={onGetStarted}>
           Get Started
@@ -28,7 +28,7 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
           <h3>Farming Encyclopedia</h3>
           <p>Smart techniques, irrigation, crop rotation & more.</p>
         </div>
-        <div className="card" onClick={() => alert('Coming soon')}>
+        <div className="card" onClick={() => navigate('/digital-literacy')}>
           <h3>Digital Literacy</h3>
           <p>Learn smartphone, internet, and UPI basics.</p>
         </div>

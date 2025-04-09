@@ -1,0 +1,38 @@
+/* Third.css */
+
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); /* Two per row */
+    gap: 2rem;
+    padding: 2rem;
+    justify-items: center;
+  }
+  
+  .geo-card {
+    background-color: #f0f8ff;
+    border: 2px solid #cce7ff;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .geo-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+  
+  .geo-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #00509e;
+  }
+  
+  .geo-card p {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
