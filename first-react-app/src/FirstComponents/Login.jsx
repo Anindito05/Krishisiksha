@@ -1,51 +1,43 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Login.css";
 
-export default function Login({ onLogin }) {
-  const [email, setEmail] = useState("");
+function Login({ onLogin, onBack }) {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (email && password) {
-      onLogin(email); // Trigger login
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser && storedUser.username === username && storedUser.password === password) {
+      onLogin(username);
     } else {
-      alert("Please enter both email and password.");
+      alert("Invalid credentials");
     }
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleLogin}>
-        <h2>Login</h2>
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-footer">
-          <label className="checkbox">
-            <input type="checkbox" /> Remember me
-          </label>
-          <a href="#">Forgot password?</a>
-        </div>
-        <button type="submit" className="login-button">Log In</button>
+    <div className="form-container">
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          required
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
       </form>
+      <button className="back-button" onClick={onBack}>← Back</button>
     </div>
   );
 }
+
+export default Login;

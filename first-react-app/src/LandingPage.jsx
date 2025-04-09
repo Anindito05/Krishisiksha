@@ -1,14 +1,14 @@
 import React from 'react';
 import './LandingPage.css';
 
-const LandingPage = () => {
+const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
   return (
     <div className="landing-container">
       <header className="header">
         <h1 className="logo">Krishishiksha</h1>
         <div className="header-buttons">
-          <button className="button primary">Login</button>
-          <button className="button secondary">Register</button>
+          <button className="button primary" onClick={onLoginClick}>Login</button>
+          <button className="button secondary" onClick={onRegisterClick}>Register</button>
         </div>
       </header>
       <section className="hero">
@@ -17,7 +17,9 @@ const LandingPage = () => {
           Learn about modern farming, digital literacy, and entrepreneurship — all in one platform,
           designed for rural communities for agricultural development.
         </p>
-        <button className="button get-started">Get Started</button>
+        <button className="button get-started" onClick={onGetStarted}>
+          Get Started
+        </button>
       </section>
       <section className="features">
         <div className="card">
@@ -39,4 +41,5 @@ const LandingPage = () => {
     </div>
   );
 };
+
 export default LandingPage;
