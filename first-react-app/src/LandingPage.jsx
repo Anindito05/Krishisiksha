@@ -1,7 +1,10 @@
 import React from 'react';
 import './LandingPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="landing-container">
       <header className="header">
@@ -11,6 +14,7 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
           <button className="button secondary" onClick={onRegisterClick}>Register</button>
         </div>
       </header>
+
       <section className="hero">
         <h2>Empowering Rural India with Knowledge</h2>
         <p>
@@ -21,20 +25,22 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
           Get Started
         </button>
       </section>
+
       <section className="features">
-        <div className="card">
+        <div className="card" onClick={() => navigate('/modern-farming')}>
           <h3>Modern Farming</h3>
           <p>Smart techniques, irrigation, crop rotation & more.</p>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => alert('Coming soon')}>
           <h3>Digital Literacy</h3>
           <p>Learn smartphone, internet, and UPI basics.</p>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => alert('Coming soon')}>
           <h3>Entrepreneurship</h3>
           <p>Start, grow, and market your own rural business.</p>
         </div>
       </section>
+
       <footer className="footer">
         © 2025 AgriShiksha. Empowering Villages, One Lesson at a Time.
       </footer>
