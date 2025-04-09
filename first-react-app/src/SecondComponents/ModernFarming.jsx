@@ -2,12 +2,26 @@ import React from "react";
 import "./ModernFarming.css";
 import { useNavigate } from "react-router-dom";
 
-const crops= ["Wheat", "Paddy", "Soya", "Tomato", "Maize", "Sugarcane", "Potato", "Onion", "Cotton", "Mustard", "Barley", "Millet"];
+const crops = [
+  { emoji: "🌾", eng: "Wheat", hin: "गेहूं", ben: "গম" },
+  { emoji: "🌾", eng: "Barley", hin: "जौ", ben: "যব" },
+  { emoji: "🌱", eng: "Paddy", hin: "धान", ben: "ধান" },
+  { emoji: "🌿", eng: "Soya", hin: "सोया", ben: "সয়াবিন" },
+  { emoji: "🍅", eng: "Tomato", hin: "टमाटर", ben: "টমেটো" },
+  { emoji: "🌽", eng: "Maize", hin: "मक्का", ben: "ভুট্টা" },
+  { emoji: "🍬", eng: "Sugarcane", hin: "गन्ना", ben: "আখ" },
+  { emoji: "🥔", eng: "Potato", hin: "आलू", ben: "আলু" },
+  { emoji: "🧅", eng: "Onion", hin: "प्याज", ben: "পেঁয়াজ" },
+  { emoji: "🧵", eng: "Cotton", hin: "कपास", ben: "তুলা" },
+  { emoji: "🌻", eng: "Mustard", hin: "सरसों", ben: "সরিষা" },
+  { emoji: "🥜", eng: "Groundnut", hin: "मूंगफली", ben: "চিনা বাদাম" },
+];
+
 function ModernFarming() {
   const navigate = useNavigate();
 
-  const handleCropClick = (crop) => {
-    navigate(`/crop/${crop.toLowerCase()}`);
+  const handleCropClick = (cropEngName) => {
+    navigate(`/crop/${cropEngName.toLowerCase()}`);
   };
 
   return (
@@ -18,9 +32,12 @@ function ModernFarming() {
           <div
             key={index}
             className="crop-card"
-            onClick={() => handleCropClick(crop)}
+            onClick={() => handleCropClick(crop.eng)}
           >
-            {crop}
+            <span className="emoji">{crop.emoji}</span>
+            <span className="crop-name">
+              {crop.eng} / {crop.hin} / {crop.ben}
+            </span>
           </div>
         ))}
       </div>

@@ -1,78 +1,134 @@
-.landing-container{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.landing-container {
   font-family: sans-serif;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: #f4fdf4;
   color: #333;
+  overflow-x: hidden;
 }
-.header{
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
+  padding: 16px 5%;
   background: #fff;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
-.logo{
+
+.logo {
   font-size: 24px;
   color: #2d7a2d;
 }
-.header-buttons .button{
+
+.header-buttons .button {
   margin-left: 10px;
 }
-.button{
+
+.button {
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.2s ease;
 }
-.primary{
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.primary {
   background-color: #2d7a2d;
   color: white;
-} 
-.secondary{
+}
+
+.secondary {
   background-color: white;
   color: #2d7a2d;
   border: 2px solid #2d7a2d;
 }
-.hero{
+
+.hero {
   text-align: center;
   padding: 60px 20px;
 }
-.hero h2{
+
+.main-title {
   font-size: 32px;
   margin-bottom: 16px;
 }
-.hero p{
-  max-width: 600px;
-  margin: 0 auto 24px;
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 24px;
+  color: #555;
 }
-.get-started{
+
+.get-started {
   background-color: #38a169;
   color: white;
 }
-.features{
+
+.features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  padding: 40px 20px;
+  padding: 40px 5%;
+  max-width: 100%;
 }
-.card{
+
+.card {
   background: white;
   border-radius: 12px;
   padding: 20px;
-  max-width: 280px;
+  width: 280px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
-.footer{
+.card h3{
+  color: darkgreen;
+  margin-bottom: 1%;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.wide-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 700px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+.wide-card h3{
+  color: darkgreen;
+  margin-bottom: 1%;
+}
+.footer {
   margin-top: auto;
   background-color: #2d7a2d;
   color: white;
   text-align: center;
   padding: 12px;
+  font-size: 14px;
 }

@@ -8,7 +8,7 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
   return (
     <div className="landing-container">
       <header className="header">
-        <h1 className="logo">Krishishiksha</h1>
+        <h1 className="logo">KRISHISIKSHA</h1>
         <div className="header-buttons">
           <button className="button primary" onClick={onLoginClick}>Login</button>
           <button className="button secondary" onClick={onRegisterClick}>Register</button>
@@ -16,19 +16,16 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
       </header>
 
       <section className="hero">
-        <h2>Empowering Rural India with Knowledge</h2>
-        <p>
-          Learn about modern farming, digital literacy, and entrepreneurship — all in one platform,
-          designed for rural communities for agricultural development.
-        </p>
+        <h2 className="main-title">Empowering Rural India with Knowladge</h2>
+        <p className="subtitle">Learn about modern farming, digital literacy, and entrepreneurship - all in one platform, designed for rural communities for agricultural development.</p>
         <button className="button get-started" onClick={onGetStarted}>
           Get Started
         </button>
       </section>
 
       <section className="features">
-        <div className="card" onClick={() => navigate('/modern-farming')}>
-          <h3>Modern Farming</h3>
+        <div className="card highlight-card" onClick={() => navigate('/modern-farming')}>
+          <h3>Farming Encyclopedia</h3>
           <p>Smart techniques, irrigation, crop rotation & more.</p>
         </div>
         <div className="card" onClick={() => alert('Coming soon')}>
@@ -38,6 +35,11 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
         <div className="card" onClick={() => alert('Coming soon')}>
           <h3>Entrepreneurship</h3>
           <p>Start, grow, and market your own rural business.</p>
+        </div>
+
+        <div className="wide-card">
+          <h3>Modern Farming Techniques</h3>
+          <p>Innovative practices for high yield, sustainability, and profitability.</p>
         </div>
       </section>
 
