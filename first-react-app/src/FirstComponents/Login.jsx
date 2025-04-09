@@ -14,7 +14,6 @@ function Login({ onLogin, onBack }) {
       alert("Invalid credentials");
     }
   };
-
   return (
     <div className="form-container">
       <h2>Login</h2>
@@ -39,5 +38,4 @@ function Login({ onLogin, onBack }) {
     </div>
   );
 }
-
 export default Login;

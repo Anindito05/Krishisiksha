@@ -2,10 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* full vertical height */
+  height: 100vh;
   background-color: #f0f0f0;
 }
-
 .form-container {
   max-width: 400px;
   width: 100%;
@@ -16,11 +15,9 @@
   background-color: #f9f9f9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .form-container h2 {
   margin-bottom: 20px;
 }
-
 .form-container input {
   width: 90%;
   padding: 10px;
@@ -29,7 +26,6 @@
   border: 1px solid #aaa;
   border-radius: 6px;
 }
-
 .form-container button {
   padding: 10px 20px;
   font-size: 1rem;
@@ -40,7 +36,6 @@
   background-color: #4CAF50;
   color: white;
 }
-
 .back-button {
   margin-top: 20px;
   background-color: #ddd;

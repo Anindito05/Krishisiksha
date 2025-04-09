@@ -1,19 +1,15 @@
 import { useState } from "react";
-import "./login.css"; // using the same CSS for both login & register for consistency
+import "./login.css"; 
 
 function Register({ onBack }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [state, setState] = useState("");
-
   const handleRegister = (e) => {
     e.preventDefault();
-
-    // Save user details to localStorage
     localStorage.setItem("user", JSON.stringify({ username, password, state }));
     alert("Registered successfully! Now you can login.");
 
-    // Clear input fields
     setUsername("");
     setPassword("");
     setState("");

@@ -5,35 +5,22 @@ import Dashboard from "./FirstComponents/Dashboard";
 import LandingPage from "./LandingPage";
 
 function App() {
-  // Stores the currently logged-in user's username
   const [user, setUser] = useState(localStorage.getItem("loggedInUser"));
-
-  // Determines if the Landing Page should be shown
   const [showLanding, setShowLanding] = useState(true);
-
-  // Controls whether to show Login or Register (true = Login, false = Register)
   const [showLogin, setShowLogin] = useState(true);
-
-  // Called when user logs in successfully
   const handleLogin = (username) => {
     localStorage.setItem("loggedInUser", username);
     setUser(username);
   };
-
-  // Logout clears the logged-in user and goes back to landing
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
     setUser(null);
     setShowLanding(true);  // Go back to Landing after logout
     setShowLogin(true);    // Default to login page next time
   };
-
-  // If a user is logged in, show the Dashboard
   if (user) {
     return <Dashboard user={user} onLogout={handleLogout} />;
   }
-
-  // If user hasn't clicked Get Started yet, show Landing
   if (showLanding) {
     return (
       <LandingPage
@@ -49,8 +36,6 @@ function App() {
       />
     );
   }
-
-  // Otherwise, show either Login or Register
   return (
     <div>
       {showLogin ? (
