@@ -1,0 +1,44 @@
+/* Container to hold the geo-card elements */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between items */
+    margin: 20px;
+  }
+  
+  /* Style for each geo-card */
+  .geo-card {
+    background-color: #f0f0f0; /* Light background for cards */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 10px); /* 50% width minus the gap between */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .geo-card:hover {
+    transform: scale(1.05); /* Enlarges card on hover */
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .geo-card {
+      width: calc(100% - 10px); /* Full width for smaller screens */
+    }
+  }
+  
+  /* Title style */
+  .geo-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Paragraph style */
+  .geo-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  

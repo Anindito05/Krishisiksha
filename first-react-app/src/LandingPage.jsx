@@ -18,26 +18,32 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
       <section className="hero">
         <h2 className="main-title">Empowering Rural India with Knowledge</h2>
         <p className="subtitle">Learn about modern farming, digital literacy, and entrepreneurship - all in one platform, designed for rural communities for agricultural development.</p>
-        <button className="button get-started" onClick={onGetStarted}>
+        <button className="button get-started" onClick={() => navigate('/farming')}>
           Get Started
         </button>
       </section>
 
       <section className="features">
-        <div className="card highlight-card" onClick={() => navigate('/modern-farming')}>
+        {/* Farming Encyclopedia Card */}
+        <div className="card highlight-card" onClick={() => navigate('/farming')}>
           <h3>Farming Encyclopedia</h3>
           <p>Smart techniques, irrigation, crop rotation & more.</p>
         </div>
+
+        {/* Digital Literacy Card */}
         <div className="card" onClick={() => navigate('/digital-literacy')}>
           <h3>Digital Literacy</h3>
           <p>Learn smartphone, internet, and UPI basics.</p>
         </div>
+
+        {/* Entrepreneurship Card */}
         <div className="card" onClick={() => alert('Coming soon')}>
           <h3>Entrepreneurship</h3>
           <p>Start, grow, and market your own rural business.</p>
         </div>
 
-        <div className="wide-card">
+        {/* Modern Farming Techniques Card */}
+        <div className="wide-card" onClick={() => navigate('/farming')}>
           <h3>Modern Farming Techniques</h3>
           <p>Innovative practices for high yield, sustainability, and profitability.</p>
         </div>

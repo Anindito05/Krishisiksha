@@ -1,38 +1,47 @@
-/* Third.css */
-
-.main-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); /* Two per row */
-    gap: 2rem;
-    padding: 2rem;
-    justify-items: center;
+.geo-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .geo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Ensures that the items are spaced evenly */
   }
   
   .geo-card {
-    background-color: #f0f8ff;
-    border: 2px solid #cce7ff;
-    border-radius: 20px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .geo-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    width: 45%; /* Adjust the width of each card to fit two per row */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
   }
   
   .geo-card h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    color: #00509e;
+    font-size: 18px;
+    margin-bottom: 10px;
   }
   
   .geo-card p {
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .geo-card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .geo-card a:hover {
+    text-decoration: underline;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .geo-card {
+      width: 100%; /* Stacks the cards vertically on smaller screens */
+    }
   }
   

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../ThirdComponents/Third.css"; 
+import "./DigitalLiteracy.css"; 
 const DigitalLiteracy = () => {
   const navigate = useNavigate();
 

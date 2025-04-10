@@ -1,0 +1,81 @@
+.technique-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .technique-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .technique-header h1 {
+    font-size: 2rem;
+    color: #2e7d32; /* Green color */
+  }
+  
+  .technique-header p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .technique-description {
+    margin: 20px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .technique-benefits {
+    margin: 20px 0;
+  }
+  
+  .technique-benefits h3 {
+    font-size: 1.5rem;
+    color: #2e7d32;
+  }
+  
+  .technique-benefits ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .technique-guides {
+    margin: 20px 0;
+  }
+  
+  .technique-guides h3 {
+    font-size: 1.5rem;
+    color: #2e7d32;
+  }
+  
+  .technique-guides ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .technique-guides li {
+    margin: 10px 0;
+  }
+  
+  .technique-guides a {
+    color: #1e88e5;
+    text-decoration: none;
+  }
+  
+  .technique-footer {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .technique-footer button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #2e7d32;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .technique-footer button:hover {
+    background-color: #1b5e20;
+  }
+  
