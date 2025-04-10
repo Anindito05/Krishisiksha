@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const GEMINI_API_KEY = "AIzaSyCiZvGaCPvyXw01FV2z8J2wwC3wiEoXBOw";
+const GEMINI_API_KEY = "AIzaSyCBubdPyDt3bvcLUM1xu_YNzZ51qSjt2cU";
 export default function GeminiChatbot() {
   const [input, setInput] = useState("");
   const [chat, setChat] = useState([]);

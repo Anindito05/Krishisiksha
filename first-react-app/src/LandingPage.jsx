@@ -3,7 +3,8 @@ import './LandingPage.css';
 import { useNavigate } from 'react-router-dom';
 
 // 💬 Gemini chatbot component inside the same file (or import from separate file)
-const GEMINI_API_KEY = 'AIzaSyCiZvGaCPvyXw01FV2z8J2wwC3wiEoXBOw'; 
+const GEMINI_API_KEY = 'YOUR_API_KEY'; // Replace with your Gemini API Key
+
 const GeminiChatbot = () => {
   const [input, setInput] = React.useState('');
   const [chat, setChat] = React.useState([]);
@@ -34,11 +35,8 @@ const GeminiChatbot = () => {
       );
 
       const data = await response.json();
-      const reply =
-      data?.candidates?.[0]?.content?.parts?.map(p => p.text).join(" ") ||
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "No response";
-          setChat([...updatedChat, { role: 'model', text: reply }]);
+      const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response';
+      setChat([...updatedChat, { role: 'model', text: reply }]);
     } catch (err) {
       setChat([...updatedChat, { role: 'model', text: 'Error fetching response.' }]);
     } finally {
@@ -135,13 +133,11 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
           Learn about modern farming, digital literacy, and entrepreneurship - all in one platform,
           designed for rural communities for agricultural development.
         </p>
-        <button className="button get-started" onClick={() => navigate('/farming')}>
-          Get Started
-        </button>
+        
       </section>
 
       <section className="features">
-        <div className="card highlight-card" onClick={() => navigate('/farming')}>
+        <div className="card highlight-card" onClick={() => navigate('/modern-farming')}>
           <h3>Farming Encyclopedia</h3>
           <p>Smart techniques, irrigation, crop rotation & more.</p>
         </div>
@@ -151,7 +147,7 @@ const LandingPage = ({ onGetStarted, onLoginClick, onRegisterClick }) => {
           <p>Learn smartphone, internet, and UPI basics.</p>
         </div>
 
-        <div className="card" onClick={() => alert('Coming soon')}>
+        <div className="card" onClick={() => navigate('/ent')}>
           <h3>Entrepreneurship</h3>
           <p>Start, grow, and market your own rural business.</p>
         </div>

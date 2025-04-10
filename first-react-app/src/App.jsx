@@ -10,6 +10,8 @@ import Dashboard from "./FirstComponents/Dashboard";
 // Section Pages
 import Farming from "./SecondComponents/Farming";
 import DigitalLiteracy from "./SecondComponents/DigitalLiteracy";
+import ModernFarming from "./SecondComponents/ModernFarming";
+import Ent from "./SecondComponents/Ent"; 
 
 // Crop Detail Pages (Details)
 import Wheat from "./Details/Wheat";
@@ -38,11 +40,13 @@ import CropRotation from "./FourthComponents/CropRotation";
 import SoilHealth from "./FourthComponents/SoilHealthManagement";
 import PrecisionFarming from "./FourthComponents/PrecisionFarming";
 
+// Floating Chat Popup (Tawk.to)
+import ChatPopup from './SecondComponents/ChatPopup';
+
 function AppWrapper() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  // Handlers
   const handleLogin = (username) => {
     setUser(username);
     navigate("/dashboard");
@@ -59,55 +63,61 @@ function AppWrapper() {
   const handleBack = () => navigate("/");
 
   return (
-    <Routes>
-      {/* Landing Page */}
-      <Route
-        path="/"
-        element={
-          <LandingPage
-            onGetStarted={handleGetStarted}
-            onLoginClick={handleLoginClick}
-            onRegisterClick={handleRegisterClick}
-          />
-        }
-      />
+    <>
+      {/* Floating Tawk.to Chat Widget (globally available) */}
+      <ChatPopup />
 
-      {/* Auth */}
-      <Route path="/login" element={<Login onLogin={handleLogin} onBack={handleBack} />} />
-      <Route path="/register" element={<Register onBack={handleBack} />} />
-      <Route path="/dashboard" element={<Dashboard user={user} onLogout={handleLogout} />} />
+      <Routes>
+        {/* Landing Page */}
+        <Route
+          path="/"
+          element={
+            <LandingPage
+              onGetStarted={handleGetStarted}
+              onLoginClick={handleLoginClick}
+              onRegisterClick={handleRegisterClick}
+            />
+          }
+        />
 
-      {/* Main Sections */}
-      <Route path="/farming" element={<Farming />} />
-      <Route path="/digital-literacy" element={<DigitalLiteracy />} />
+        {/* Authentication */}
+        <Route path="/login" element={<Login onLogin={handleLogin} onBack={handleBack} />} />
+        <Route path="/register" element={<Register onBack={handleBack} />} />
+        <Route path="/dashboard" element={<Dashboard user={user} onLogout={handleLogout} />} />
 
-      {/* Crop Details */}
-      <Route path="/details/Wheat" element={<Wheat />} />
-      <Route path="/details/Paddy" element={<Paddy />} />
-      <Route path="/details/Soya" element={<Soya />} />
-      <Route path="/details/Tomato" element={<Tomato />} />
-      <Route path="/details/Maize" element={<Maize />} />
-      <Route path="/details/Sugarcane" element={<Sugarcane />} />
-      <Route path="/details/Potato" element={<Potato />} />
-      <Route path="/details/Onion" element={<Onion />} />
-      <Route path="/details/Cotton" element={<Cotton />} />
-      <Route path="/details/Mustard" element={<Mustard />} />
-      <Route path="/details/Barley" element={<Barley />} />
-      <Route path="/details/Millet" element={<Millet />} />
+        {/* Main Sections */}
+        <Route path="/farming" element={<Farming />} />
+        <Route path="/digital-literacy" element={<DigitalLiteracy />} />
+        <Route path="/modern-farming" element={<ModernFarming />} />  
+        <Route path="/ent" element={<Ent />} />
+        {/* Crop Detail Pages */}
+        <Route path="/details/Wheat" element={<Wheat />} />
+        <Route path="/details/Paddy" element={<Paddy />} />
+        <Route path="/details/Soya" element={<Soya />} />
+        <Route path="/details/Tomato" element={<Tomato />} />
+        <Route path="/details/Maize" element={<Maize />} />
+        <Route path="/details/Sugarcane" element={<Sugarcane />} />
+        <Route path="/details/Potato" element={<Potato />} />
+        <Route path="/details/Onion" element={<Onion />} />
+        <Route path="/details/Cotton" element={<Cotton />} />
+        <Route path="/details/Mustard" element={<Mustard />} />
+        <Route path="/details/Barley" element={<Barley />} />
+        <Route path="/details/Millet" element={<Millet />} />
 
-      {/* Digital Literacy Subpages */}
-      <Route path="/govt" element={<Govt />} />
-      <Route path="/pvt" element={<Pvt />} />
-      <Route path="/ven" element={<Ven />} />
-      <Route path="/oth" element={<Oth />} />
-      <Route path="/price" element={<Price />} />
+        {/* Digital Literacy Subpages */}
+        <Route path="/govt" element={<Govt />} />
+        <Route path="/pvt" element={<Pvt />} />
+        <Route path="/ven" element={<Ven />} />
+        <Route path="/oth" element={<Oth />} />
+        <Route path="/price" element={<Price />} />
 
-      {/* Modern Farming Techniques Details */}
-      <Route path="/technique/smart-irrigation" element={<SmartIrrigation />} />
-      <Route path="/technique/crop-rotation" element={<CropRotation />} />
-      <Route path="/technique/soil-health" element={<SoilHealth />} />
-      <Route path="/technique/precision-farming" element={<PrecisionFarming />} />
-    </Routes>
+        {/* Modern Farming Technique Pages */}
+        <Route path="/technique/smart-irrigation" element={<SmartIrrigation />} />
+        <Route path="/technique/crop-rotation" element={<CropRotation />} />
+        <Route path="/technique/soil-health" element={<SoilHealth />} />
+        <Route path="/technique/precision-farming" element={<PrecisionFarming />} />
+      </Routes>
+    </>
   );
 }
 

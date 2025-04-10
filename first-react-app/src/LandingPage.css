@@ -136,3 +136,24 @@ html, body {
   padding: 12px;
   font-size: 14px;
 }
+
+/* Floating Chatbot Icon */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #2d7a2d;
+  color: white;
+  font-size: 24px;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 9999;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chat-icon:hover {
+  background-color: #38a169;
+  transform: scale(1.05);
+}

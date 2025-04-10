@@ -13,7 +13,7 @@ const crops = [
   { name: "Onion / प्याज / পেঁয়াজ", emoji: "🧅", route: "Onion" },
   { name: "Cotton / कपास / তুলা", emoji: "🧵", route: "Cotton" },
   { name: "Mustard / सरसों / সরিষা", emoji: "🌼", route: "Mustard" },
-  { name: "Barley / जौ / যব", emoji: "🍺", route: "Barley" },
+  { name: "Barley / जौ / যব", emoji: "🌾", route: "Barley" },
   { name: "Millet / बाजरा / বাজরা", emoji: "🌾", route: "Millet" },
 ];
 
