@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./login.css"; 
+import "./RegisterFile.css"; 
 
 function Register({ onBack }) {
   const [username, setUsername] = useState("");

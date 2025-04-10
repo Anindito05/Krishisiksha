@@ -15,7 +15,7 @@ html, body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f4fdf4;
+  background: url("https://premierag.com/wp-content/uploads/2024/04/Farming-Terms-Glossary-1200x675.jpg") no-repeat center center/cover;
   color: #333;
   overflow-x: hidden;
 }

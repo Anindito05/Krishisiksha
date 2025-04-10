@@ -8,7 +8,7 @@ const crops = [
   { name: "Soya / सोया / সয়া", emoji: "🌱", route: "Soya" },
   { name: "Tomato / टमाटर / টমেটো", emoji: "🍅", route: "Tomato" },
   { name: "Maize / मक्का / ভুট্টা", emoji: "🌽", route: "Maize" },
-  { name: "Sugarcane / गन्ना / আখ", emoji: "🥤", route: "Sugarcane" },
+  { name: "Sugarcane / गन्ना / আখ", emoji: "🎋", route: "Sugarcane" },
   { name: "Potato / आलू / আলু", emoji: "🥔", route: "Potato" },
   { name: "Onion / प्याज / পেঁয়াজ", emoji: "🧅", route: "Onion" },
   { name: "Cotton / कपास / তুলা", emoji: "🧵", route: "Cotton" },
