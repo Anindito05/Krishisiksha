@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
+// Core Pages
 import LandingPage from "./LandingPage";
 import Login from "./FirstComponents/Login";
 import Register from "./FirstComponents/RegisterFile";
 import Dashboard from "./FirstComponents/Dashboard";
 
-import Farming from "./SecondComponents/Farming"; // Updated import
+// Section Pages
+import Farming from "./SecondComponents/Farming";
 import DigitalLiteracy from "./SecondComponents/DigitalLiteracy";
 
-// Crop Detail Pages
+// Crop Detail Pages (Details)
 import Wheat from "./Details/Wheat";
 import Paddy from "./Details/Paddy";
 import Soya from "./Details/Soya";
@@ -23,14 +25,14 @@ import Mustard from "./Details/Mustard";
 import Barley from "./Details/Barley";
 import Millet from "./Details/Millet";
 
-// Digital Literacy Sub-Components
+// Digital Literacy Subpages (ThirdComponents)
 import Govt from "./ThirdComponents/Govt";
 import Pvt from "./ThirdComponents/Pvt";
 import Ven from "./ThirdComponents/Ven";
 import Oth from "./ThirdComponents/Oth";
 import Price from "./ThirdComponents/Price";
 
-// Farming Techniques (4 parts)
+// Modern Farming Technique Details (FourthComponents)
 import SmartIrrigation from "./FourthComponents/SmartIrrigation";
 import CropRotation from "./FourthComponents/CropRotation";
 import SoilHealth from "./FourthComponents/SoilHealthManagement";
@@ -40,6 +42,7 @@ function AppWrapper() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
+  // Handlers
   const handleLogin = (username) => {
     setUser(username);
     navigate("/dashboard");
@@ -50,13 +53,14 @@ function AppWrapper() {
     navigate("/");
   };
 
-  const handleGetStarted = () => navigate("/farming"); // Update route to /farming
+  const handleGetStarted = () => navigate("/farming");
   const handleLoginClick = () => navigate("/login");
   const handleRegisterClick = () => navigate("/register");
   const handleBack = () => navigate("/");
 
   return (
     <Routes>
+      {/* Landing Page */}
       <Route
         path="/"
         element={
@@ -67,17 +71,17 @@ function AppWrapper() {
           />
         }
       />
+
+      {/* Auth */}
       <Route path="/login" element={<Login onLogin={handleLogin} onBack={handleBack} />} />
       <Route path="/register" element={<Register onBack={handleBack} />} />
       <Route path="/dashboard" element={<Dashboard user={user} onLogout={handleLogout} />} />
 
-      {/* Modern Farming Techniques page */}
+      {/* Main Sections */}
       <Route path="/farming" element={<Farming />} />
-
-      {/* Digital Literacy */}
       <Route path="/digital-literacy" element={<DigitalLiteracy />} />
 
-      {/* Crop Detail Pages */}
+      {/* Crop Details */}
       <Route path="/details/Wheat" element={<Wheat />} />
       <Route path="/details/Paddy" element={<Paddy />} />
       <Route path="/details/Soya" element={<Soya />} />
@@ -91,14 +95,14 @@ function AppWrapper() {
       <Route path="/details/Barley" element={<Barley />} />
       <Route path="/details/Millet" element={<Millet />} />
 
-      {/* 🆕 Digital Literacy Pages */}
+      {/* Digital Literacy Subpages */}
       <Route path="/govt" element={<Govt />} />
       <Route path="/pvt" element={<Pvt />} />
       <Route path="/ven" element={<Ven />} />
       <Route path="/oth" element={<Oth />} />
       <Route path="/price" element={<Price />} />
 
-      {/* Farming Techniques Details */}
+      {/* Modern Farming Techniques Details */}
       <Route path="/technique/smart-irrigation" element={<SmartIrrigation />} />
       <Route path="/technique/crop-rotation" element={<CropRotation />} />
       <Route path="/technique/soil-health" element={<SoilHealth />} />
